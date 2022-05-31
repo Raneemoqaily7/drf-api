@@ -6,7 +6,7 @@ from django.db.models.deletion import CASCADE
 
 class Book (models.Model):
     title = models.CharField(max_length=64)
-    reviewer =models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    reviewer =models.ForeignKey(get_user_model(), on_delete=models.CASCADE , blank = True, null = True)
     timestamp =models.DateTimeField(auto_now_add=True)
     updatedtime =models.DateTimeField(auto_now=True )
     description =models.TextField()
